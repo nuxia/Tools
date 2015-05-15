@@ -1,0 +1,17 @@
+{
+    "name": "nuxia/tools",
+    "license": "MIT",
+    "type": "php-component",
+    "description": "Miscellaneous php tools",
+    "autoload": {
+        "psr-4": { "Nuxia\\Component\\Tools\\": ""}
+    },
+    "require": {
+        "php": ">=5.4",
+        "behat/transliterator": "~1.0",
+        "doctrine/inflector": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    }
+}

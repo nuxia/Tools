@@ -11,18 +11,21 @@ use Nuxia\Component\Tools\Model\ModelHelper;
  */
 class ModelHelperTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @covers \Nuxia\Component\Tools\Model\ModelHelper::getModelName
+     */
     public function testGetModelName()
     {
         $object = new \stdClass();
 
-        $this->assertEquals('StdClass', ModelHelper::getModelName($object, 'classify'));
-        $this->assertEquals('std_class', ModelHelper::getModelName($object, 'tableize'));
-        $this->assertEquals('std_class', ModelHelper::getModelName($object));
-        $this->assertEquals('stdclass', ModelHelper::getModelName($object, 'lower'));
-        $this->assertEquals('stdClass', ModelHelper::getModelName($object, 'camelize'));
+        $this->assertEquals(ModelHelper::getModelName($object, 'classify'), 'StdClass');
+        $this->assertEquals(ModelHelper::getModelName($object, 'tableize'), 'std_class');
+        $this->assertEquals(ModelHelper::getModelName($object), 'std_class');
+        $this->assertEquals(ModelHelper::getModelName($object, 'lower'), 'stdclass');
+        $this->assertEquals(ModelHelper::getModelName($object, 'camelize'), 'stdClass');
 
         $this->setExpectedException('\RuntimeException');
-        $this->assertEquals('stdClass', ModelHelper::getModelName($object, 'invalid-format'));
+        ModelHelper::getModelName($object, 'invalid-format');
     }
 }
 

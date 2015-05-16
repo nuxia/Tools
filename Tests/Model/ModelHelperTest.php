@@ -5,6 +5,8 @@ namespace Nuxia\Component\Tools\Tests\Model;
 use Nuxia\Component\Tools\Model\ModelHelper;
 
 /**
+ * Unit tests for {@see \Nuxia\Component\Tools\Model\ModelHelper} 
+ * 
  * @author Yannick Snobbert <yannick.snobbert@gmail.com>
  */
 class ModelHelperTest extends \PHPUnit_Framework_TestCase
